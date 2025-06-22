@@ -73,7 +73,7 @@ Then, access the app at [http://localhost:8501](http://localhost:8501).
 
 1. Push all project files to your GitHub repository.
 2. Connect the repository to [Streamlit Community Cloud](https://streamlit.io/cloud).
-3. Deploy the app and get a public URL (you can use here `https://handwritten-digit-generation-bmub8latznjrfgjofi9gaw.streamlit.app/`).
+3. Deploy the app and get a public URL ([you can use here](https://handwritten-digit-generation-bmub8latznjrfgjofi9gaw.streamlit.app/`).))
 
 ---
 
