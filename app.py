@@ -24,7 +24,7 @@ class Decoder(nn.Module):
 
 # Load the trained decoder
 decoder = Decoder()
-decoder.load_state_dict(torch.load('decoder_weights.pth', map_location=torch.device('cpu')))
+decoder.load_state_dict(torch.load('decoder_weights.pth', map_location=torch.device('cpu'), weights_only=False))
 decoder.eval()
 
 # Function to generate images
@@ -51,4 +51,4 @@ if st.button("Generate"):
     for i, img in enumerate(images):
         img = (img * 255).astype(np.uint8)
         img = Image.fromarray(img, mode='L')
-        cols[i].image(img, caption=f"Image {i+1}", use_column_width=True)
+        cols[i].image(img, caption=f"Image {i+1}", use_container_width=True)
