@@ -37,8 +37,12 @@ This repository contains a web application that generates images of handwritten 
 ### 🚀 Installation
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/Trungnef/Handwritten-Digit-Generation.git
+cd Handwritten-Digit-Generation
+
+python -m venv .venv
+./.venv/Scripts/activate
+
 pip install -r requirements.txt
 ```
 
@@ -69,7 +73,7 @@ Then, access the app at [http://localhost:8501](http://localhost:8501).
 
 1. Push all project files to your GitHub repository.
 2. Connect the repository to [Streamlit Community Cloud](https://streamlit.io/cloud).
-3. Deploy the app and get a public URL (e.g. `https://your-app-name.streamlit.app`).
+3. Deploy the app and get a public URL (you can use here `https://handwritten-digit-generation-bmub8latznjrfgjofi9gaw.streamlit.app/`).
 
 ---
 
