@@ -1,76 +1,105 @@
-Handwritten Digit Generator
-This repository contains a web application that generates images of handwritten digits (0–9) using a Conditional Variational Autoencoder (CVAE) trained on the MNIST dataset. The app is built with Streamlit and deployed on Streamlit Community Cloud for public access.
-Features
+# 🖋️ Handwritten Digit Generator
 
-Digit Selection: Users can select a digit (0–9) via a dropdown menu.
-Image Generation: Generates five unique 28x28 grayscale images of the selected digit, resembling the MNIST dataset format.
-Model: Uses a custom-trained CVAE (no pre-trained weights) with PyTorch.
-Deployment: Hosted on Streamlit Community Cloud, accessible for at least two weeks from deployment.
+This repository contains a web application that generates images of handwritten digits (0–9) using a **Conditional Variational Autoencoder (CVAE)** trained on the MNIST dataset. The app is built with **Streamlit** and deployed on **Streamlit Community Cloud** for public access.
 
-Repository Structure
+---
 
-app.py: Streamlit web application code for the user interface and image generation.
-train_cvae.ipynb: Jupyter notebook with the CVAE model architecture, training script, and loss function.
-decoder_weights.pth: Trained weights of the CVAE decoder model.
-requirements.txt: Python dependencies required to run the app.
+## ✨ Features
 
-Setup and Deployment
-Prerequisites
+- **Digit Selection**: Users can select a digit (0–9) via a dropdown menu.
+- **Image Generation**: Generates five unique 28x28 grayscale images of the selected digit, resembling the MNIST dataset format.
+- **Model**: Uses a custom-trained CVAE (no pre-trained weights) with PyTorch.
+- **Deployment**: Hosted on Streamlit Community Cloud, accessible for at least two weeks from deployment.
 
-Python 3.8+
-Streamlit Community Cloud account
-GitHub repository
-Trained model weights (decoder_weights.pth)
+---
 
-Installation
+## 📁 Repository Structure
 
-Clone the repository:git clone https://github.com/your-username/your-repo-name.git
+| File | Description |
+|------|-------------|
+| `app.py` | Streamlit web application for user interface and image generation. |
+| `train_cvae.ipynb` | Jupyter notebook with CVAE architecture, training code, and loss function. |
+| `decoder_weights.pth` | Trained weights of the decoder (CVAE). |
+| `requirements.txt` | Python dependencies required to run the app. |
 
+---
 
-Install dependencies:pip install -r requirements.txt
+## ⚙️ Setup and Deployment
 
+### ✅ Prerequisites
+- Python 3.8+
+- Streamlit Community Cloud account
+- GitHub repository
+- Trained model weights (`decoder_weights.pth`)
 
+---
 
-Training the Model
+### 🚀 Installation
 
-Open train_cvae.ipynb in Google Colab (use a T4 GPU).
-Run the notebook to train the CVAE on the MNIST dataset.
-Save the decoder_weights.pth file after training.
-Upload decoder_weights.pth to the repository.
+```bash
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+pip install -r requirements.txt
+```
 
-Running Locally
+---
 
-Ensure all files (app.py, decoder_weights.pth, requirements.txt) are in the same directory.
-Run the Streamlit app:streamlit run app.py
+### 🧠 Training the Model
 
+1. Open `train_cvae.ipynb` in **Google Colab** (use T4 GPU).
+2. Run the notebook to train the CVAE on the MNIST dataset.
+3. Save the file `decoder_weights.pth` after training.
+4. Upload `decoder_weights.pth` to this repository.
 
-Access the app at http://localhost:8501.
+---
 
-Deployment
+### 🖥️ Running Locally
 
-Push all files to a GitHub repository.
-Connect the repository to Streamlit Community Cloud.
-Deploy the app and obtain the public URL (e.g., https://your-app-name.streamlit.app).
+Make sure all files (`app.py`, `decoder_weights.pth`, `requirements.txt`) are in the same directory.
 
-Usage
+```bash
+streamlit run app.py
+```
 
-Visit the deployed app URL.
-Select a digit (0–9) from the dropdown menu.
-Click "Generate" to display five generated images of the selected digit.
+Then, access the app at [http://localhost:8501](http://localhost:8501).
 
-Model Details
+---
 
-Dataset: MNIST (28x28 grayscale images of handwritten digits).
-Framework: PyTorch.
-Architecture: Conditional Variational Autoencoder (CVAE) with convolutional encoder and decoder.
-Loss Function: Binary Cross-Entropy (reconstruction loss) + KL-Divergence (latent space regularization).
-Training: Performed on Google Colab with a single T4 GPU for 10 epochs.
+### 🌐 Deployment
 
-Notes
+1. Push all project files to your GitHub repository.
+2. Connect the repository to [Streamlit Community Cloud](https://streamlit.io/cloud).
+3. Deploy the app and get a public URL (e.g. `https://your-app-name.streamlit.app`).
 
-The app generates diverse images by sampling from a latent space, ensuring the five images are not identical.
-The model is trained from scratch, adhering to the requirement of not using pre-trained weights.
-The deployed app will remain active for at least two weeks and may enter sleep mode when idle but can be reactivated by users.
+---
 
-License
-MIT License
+## 🧪 Usage
+
+1. Visit the deployed app.
+2. Select a digit (0–9) from the dropdown menu.
+3. Click **"Generate"** to display five images of that digit.
+
+---
+
+## 📊 Model Details
+
+- **Dataset**: MNIST (28x28 grayscale handwritten digits).
+- **Framework**: PyTorch.
+- **Model Type**: Conditional Variational Autoencoder (CVAE) with convolutional layers.
+- **Loss Function**: Binary Cross-Entropy (reconstruction) + KL Divergence (latent space regularization).
+- **Training**: Done on Google Colab with a single T4 GPU, trained for 10 epochs.
+- **Output**: Diverse digit images sampled from the CVAE latent space.
+
+---
+
+## ℹ️ Notes
+
+- The app **does not** use any pretrained models; it is trained from scratch.
+- The five generated images per digit are **not identical**, but exhibit controlled variation.
+- The app will remain accessible for **at least 2 weeks**. It may enter sleep mode when idle, but can be reactivated by visiting the URL.
+
+---
+
+## 📝 License
+
+This project is licensed under the [MIT License](LICENSE).
